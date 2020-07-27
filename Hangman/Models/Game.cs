@@ -1,12 +1,45 @@
+using MySql.Data.MySqlClient;
+using System;
+using System.Collections.Generic;
+
 namespace Hangman.Models
 {
   public class Game
   {
     public string Word { get; set; } = null;
-  }
+    public List<char> Display { get; set; } = null;
 
-  public void WordGet()
-  {
+    public void WordGet()
+    {
+      Random rnd = new Random();
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM `words` WHERE id = @wordID;";
+      MySqlParameter wordID = new MySqlParameter();
+      wordID.ParameterName = "@wordID";
+      wordID.Value = rnd.Next(1, 8);
+      cmd.Parameters.Add(wordID);
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      string word = "";
+      while (rdr.Read())
+      {
+        word = rdr.GetString(1);
+      }
+      if (word != null)
+      {
+        Word = word;
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
 
+    public void WordDisplay()
+    {
+
+    }
   }
 }

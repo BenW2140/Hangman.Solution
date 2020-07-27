@@ -1,5 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Hangman.Models;
+using MySql.Data.MySqlClient;
+using System.Collections.Generic;
 
 namespace Hangman.Tests
 {
@@ -20,6 +22,20 @@ namespace Hangman.Tests
       Game newGame = new Game();
       newGame.WordGet();
       Assert.IsNotNull(newGame.Word);
+    }
+
+    [TestMethod]
+    public void WordDisplay_ShouldGenerateAWordDisplayToKeepTrackOfUserGuesses_ListGenerator()
+    {
+      Game newGame = new Game();
+      newGame.WordGet();
+      newGame.WordDisplay();
+      List<char> expectedList = new List<char>{};
+      foreach(char x in newGame.Word)
+      {
+        expectedList.Add('_');
+      }
+      CollectionAssert.AreEqual(expectedList, newGame.Display);
     }
   }
 }
