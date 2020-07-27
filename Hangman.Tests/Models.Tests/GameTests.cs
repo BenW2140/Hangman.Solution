@@ -69,5 +69,15 @@ namespace Hangman.Tests
       newGame.DecreaseGuesses();
       Assert.AreEqual(4, newGame.Guesses);
     }
+
+    [TestMethod]
+    public void GameOver_ShouldDetectIfAGameIsOverByGuessingAllLetters_True()
+    {
+      Game newGame = new Game();
+      newGame.Word = "aaaaaa";
+      newGame.WordDisplay();
+      newGame.UpdateDisplay('a');
+      Assert.IsTrue(newGame.GameOver);
+    }
   }
 }
