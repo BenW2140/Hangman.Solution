@@ -66,6 +66,10 @@ namespace Hangman.Models
           Display[i] = entry;
         }
       }
+      if (Display.Contains('_') == false)
+      {
+        GameOver = true;
+      }
     }
 
     public void DecreaseGuesses()
