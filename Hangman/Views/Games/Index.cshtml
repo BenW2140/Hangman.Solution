@@ -1,4 +1,7 @@
 @using Hangman.Models;
+@{
+  Layout = "_Layout";
+}
 
 @if (@Model.GameOver)
 {
@@ -25,8 +28,8 @@ else
   <form action="/games/new" method="post">
     <label for="guess">Enter Guess:</label>
     <input id="guess" name="guess" type="text" pattern="[A-Za-z]{1}" required>
-    <button type="submit">Guess!</button>
+    <button class="btn btn-success" type="submit">Guess!</button>
   </form>
 }
 
-<button onclick="location.href='/games'">Start A New Game!</button>
+<button class="btn btn-info" onclick="location.href='/games'">Start A New Game!</button>
