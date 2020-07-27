@@ -79,5 +79,17 @@ namespace Hangman.Tests
       newGame.UpdateDisplay('a');
       Assert.IsTrue(newGame.GameOver);
     }
+
+    [TestMethod]
+    public void GameOver_ShouldDetectIfAGameIsOverByRunningOutOfGuesses_True()
+    {
+      Game newGame = new Game();
+      newGame.DecreaseGuesses();
+      newGame.DecreaseGuesses();
+      newGame.DecreaseGuesses();
+      newGame.DecreaseGuesses();
+      newGame.DecreaseGuesses();
+      Assert.IsTrue(newGame.GameOver);
+    }
   }
 }
