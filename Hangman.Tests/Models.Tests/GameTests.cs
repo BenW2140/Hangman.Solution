@@ -7,6 +7,11 @@ namespace Hangman.Tests
   public class GameTests
   {
     // Test methods go here
-    
+    [TestMethod]
+    public void GameConstructor_CanInitializeAGameObject_ObjectCreated()
+    {
+      Game newGame = new Game();
+      Assert.AreEqual(typeof(Game), newGame.GetType());
+    }
   }
 }
