@@ -37,5 +37,16 @@ namespace Hangman.Tests
       }
       CollectionAssert.AreEqual(expectedList, newGame.Display);
     }
+
+    [TestMethod]
+    public void IsCorrect_ShouldDetermineIfLetterIsInWord_Bool()
+    {
+      Game newGame = new Game();
+      newGame.WordGet();
+      char entry = 'a';
+      bool response = newGame.IsCorrect(entry);
+      bool expected = newGame.Word.Contains(entry);
+      Assert.AreEqual(expected, response);
+    }
   }
 }

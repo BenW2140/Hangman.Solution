@@ -45,5 +45,10 @@ namespace Hangman.Models
         Display.Add('_');
       }
     }
+
+    public bool IsCorrect(char entry)
+    {
+      return false;
+    }
   }
 }
