@@ -54,5 +54,10 @@ namespace Hangman.Models
       }
       return false;
     }
+
+    public void UpdateDisplay(char entry)
+    {
+
+    }
   }
 }

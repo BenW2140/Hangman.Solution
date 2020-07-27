@@ -48,5 +48,17 @@ namespace Hangman.Tests
       bool expected = newGame.Word.Contains(entry);
       Assert.AreEqual(expected, response);
     }
+
+    [TestMethod]
+    public void UpdateDisplay_UpdateDisplayIfEntryIsCorrect_ListGenerator()
+    {
+      Game newGame = new Game();
+      newGame.Word = "airplane";
+      newGame.WordDisplay();
+      char entry = 'a';
+      newGame.UpdateDisplay(entry);
+      List<char> expectedList = new List<char> {'a', '_', '_', '_', '_', 'a', '_', '_'};
+      Assert.AreEqual(expectedList, newGame.Display);
+    }
   }
 }
