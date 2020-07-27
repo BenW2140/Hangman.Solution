@@ -48,6 +48,10 @@ namespace Hangman.Models
 
     public bool IsCorrect(char entry)
     {
+      if(Word.Contains(entry))
+      {
+        return true;
+      }
       return false;
     }
   }
