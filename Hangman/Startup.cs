@@ -40,4 +40,8 @@ namespace Hangman
       });
     }
   }
+  public static class DBConfiguration
+  {
+    public static string ConnectionString = "server=localhost;user id=root;password=OreoBearClayEcho1;port=3306;database=hangman;";
+  }
 }

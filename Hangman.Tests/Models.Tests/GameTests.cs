@@ -13,5 +13,13 @@ namespace Hangman.Tests
       Game newGame = new Game();
       Assert.AreEqual(typeof(Game), newGame.GetType());
     }
+
+    [TestMethod]
+    public void WordGet_RetrievesARandomWordFromTheDatabase_WordGotten()
+    {
+      Game newGame = new Game();
+      newGame.WordGet();
+      Assert.IsNotNull(newGame.Word);
+    }
   }
 }
