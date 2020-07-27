@@ -58,7 +58,7 @@ namespace Hangman.Tests
       char entry = 'a';
       newGame.UpdateDisplay(entry);
       List<char> expectedList = new List<char> {'a', '_', '_', '_', '_', 'a', '_', '_'};
-      Assert.AreEqual(expectedList, newGame.Display);
+      CollectionAssert.AreEqual(expectedList, newGame.Display);
     }
   }
 }

@@ -57,7 +57,13 @@ namespace Hangman.Models
 
     public void UpdateDisplay(char entry)
     {
-
+      for (int i = 0; i < Word.Length; i++)
+      {
+        if (entry == Word[i])
+        {
+          Display[i] = entry;
+        }
+      }
     }
   }
 }
