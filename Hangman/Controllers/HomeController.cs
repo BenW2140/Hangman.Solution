@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using Hangman.Models;
 
-namespace ProjectName.Controllers
+namespace Hangman.Controllers
 {
   public class HomeController : Controller
   {

@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Hangman_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _Play some hangman, July 27, 2020_
 
-#### By _**Ben White**_
+#### By _**Ben White & Micheal Hansen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This program allows a user to play a game of hangman using randomly generated words_
 
 ## Setup/Installation Requirements
 
@@ -18,13 +18,13 @@ Software Requirements:
 
 2. Clone this repository onto your computer: https://github.com/...
 
-3. In your preferred terminal window, navigate into PROJECTNAME.SOLUTIONS/PROJECTNAME using cd (i.e. cd
-   desktop/PROJECTNAME.SOLUTIONS/PROJECTNAME) and open the project with your preferred code editor.
+3. In your preferred terminal window, navigate into Hangman.Solutions/Hangman using cd (i.e. cd
+   desktop/Hangman.Solutions/Hangman) and open the project with your preferred code editor.
 4. Run the following terminal command: $ dotnet restore
 
 5. To initiate this terminal program, run the command: $ dotnet run
 
-6. To run the test suite included with this project, within the terminal navigate into PROJECTNAME.TESTS and run the following commands:
+6. To run the test suite included with this project, within the terminal navigate into Hangman.Tests and run the following commands:
   * $ dotnet restore
   * $ dotnet test
 
@@ -32,22 +32,29 @@ Software Requirements:
 
 Behavior|Input|Output
 ------|------|------
-| |
+The program will initiate a game of hangman|User clicks new game|Begin game
+The program will retrieve a random word from the database|on game start|'some word'
+The program will display the blanked out word to the user|'airplane'|_ _ _ _ _ _ _
+The program will allow the user to guess a letter|a|a
+The program will determine whether input is correct|a|correct
+The program will display correct answer|a|a _ _ _ _ _ _
+The program will display incorrect answer|b|guesses:3 -> guesses:2
+The program will determine whether game has been won or lost|guesses:0|Game over
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_None currently known_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Reach out through GitHub_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_C#, .NET, SQL, ASP.NET_
 
 ### License
 
 *MIT License*
 
-Copyright (c) 2020 **_Ben White_**
+Copyright (c) 2020 **_Ben White & Micheal Hansen_**
