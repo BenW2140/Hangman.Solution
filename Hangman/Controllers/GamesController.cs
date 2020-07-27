@@ -5,16 +5,13 @@ namespace Hangman.Controllers
 {
   public class GamesController : Controller
   {
-    public Game newGame = null;
+    public static Game newGame = null;
     [HttpGet("/games")]
     public ActionResult Index()
     {
-      if (newGame == null)
-      {
-        newGame = new Game();
-        newGame.WordGet();
-        newGame.WordDisplay();
-      }
+      newGame = new Game();
+      newGame.WordGet();
+      newGame.WordDisplay();
       return View(newGame);
     }
 
@@ -29,7 +26,7 @@ namespace Hangman.Controllers
       {
         newGame.DecreaseGuesses();
       }
-      return RedirectToAction("Index");
+      return View("Index", newGame);
     }
   }
 }

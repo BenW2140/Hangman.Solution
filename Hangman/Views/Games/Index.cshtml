@@ -1,12 +1,32 @@
 @using Hangman.Models;
 
-@foreach (char x in @Model.Display)
+@if (@Model.GameOver)
 {
-  <p>@x</p>
+  @if(@Model.Guesses == 0)
+  {
+    <p>You Lose!</p>
+  }
+  else
+  {
+    <p>You Win!</p>
+  }
+}
+else
+{
+  <div class="word-display">
+    @foreach (char x in @Model.Display)
+    {
+      @x 
+    }
+  </div>
+
+  <p>Guesses Remaining: @Model.Guesses</p>
+
+  <form action="/games/new" method="post">
+    <label for="guess">Enter Guess:</label>
+    <input id="guess" name="guess" type="text" pattern="[A-Za-z]{1}" required>
+    <button type="submit">Guess!</button>
+  </form>
 }
 
-<form action="/games/new" method="post">
-  <label for="guess">Enter Guess:</label>
-  <input id="guess" name="guess" type="text" pattern="[A-Za-z]{1}" required>
-  <button type="submit">Guess!</button>
-</form>
+<button onclick="location.href='/games'">Start A New Game!</button>
