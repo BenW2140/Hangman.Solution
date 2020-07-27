@@ -39,7 +39,11 @@ namespace Hangman.Models
 
     public void WordDisplay()
     {
-
+      Display = new List<char>{};
+      foreach(char x in Word)
+      {
+        Display.Add('_');
+      }
     }
   }
 }
