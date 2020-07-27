@@ -60,5 +60,14 @@ namespace Hangman.Tests
       List<char> expectedList = new List<char> {'a', '_', '_', '_', '_', 'a', '_', '_'};
       CollectionAssert.AreEqual(expectedList, newGame.Display);
     }
+
+    [TestMethod]
+    public void DecreaseGuesses_ReduceRemainingGuessesIfEntryIsIncorrect_Int()
+    {
+      Game newGame = new Game();
+      newGame.Word = "airplane";
+      newGame.DecreaseGuesses();
+      Assert.AreEqual(4, newGame.Guesses);
+    }
   }
 }

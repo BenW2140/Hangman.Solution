@@ -8,6 +8,7 @@ namespace Hangman.Models
   {
     public string Word { get; set; } = null;
     public List<char> Display { get; set; } = null;
+    public int Guesses { get; set; } = 5;
 
     public void WordGet()
     {
@@ -64,6 +65,11 @@ namespace Hangman.Models
           Display[i] = entry;
         }
       }
+    }
+
+    public void DecreaseGuesses()
+    {
+      
     }
   }
 }
