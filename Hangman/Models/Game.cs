@@ -75,6 +75,10 @@ namespace Hangman.Models
     public void DecreaseGuesses()
     {
       Guesses--;
+      if (Guesses == 0)
+      {
+        GameOver = true;
+      }
     }
   }
 }
