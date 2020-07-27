@@ -1,0 +1,12 @@
+@using Hangman.Models;
+
+@foreach (char x in @Model.Display)
+{
+  <p>@x</p>
+}
+
+<form action="/games/new" method="post">
+  <label for="guess">Enter Guess:</label>
+  <input id="guess" name="guess" type="text" pattern="[A-Za-z]{1}" required>
+  <button type="submit">Guess!</button>
+</form>

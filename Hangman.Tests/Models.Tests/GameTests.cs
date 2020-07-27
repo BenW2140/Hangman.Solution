@@ -91,5 +91,16 @@ namespace Hangman.Tests
       newGame.DecreaseGuesses();
       Assert.IsTrue(newGame.GameOver);
     }
+
+    [TestMethod]
+    public void GameOver_ShouldDetectIfAGameIsNotOver_False()
+    {
+      Game newGame = new Game();
+      newGame.Word = "airplane";
+      newGame.WordDisplay();
+      newGame.DecreaseGuesses();
+      newGame.UpdateDisplay('a');
+      Assert.IsFalse(newGame.GameOver);
+    }
   }
 }
