@@ -69,7 +69,7 @@ namespace Hangman.Models
 
     public void DecreaseGuesses()
     {
-      
+      Guesses--;
     }
   }
 }
